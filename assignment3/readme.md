@@ -50,7 +50,7 @@ AS A LAST RESORT, YOU CAN PASS AN ITEM’S INDEX IN THE ARRAY AS A KEY. THIS CAN
 - JSX is not a package its a javascript syntax extension.Hence can be used directly no need of any package manager like babel to install.
 
 - Functional components <br/>
-  Functional components are nothing but javascript functions returning react elements. JSX is a react element(behind the scenes). </br?
+  Functional components are nothing but javascript functions returning react elements. JSX is a react element(behind the scenes). </br>
  Functional components names always starts with a capital letter.Its a normal convention and a good practice.</br>
  Functional components are rendered using angular brackets.</br>
 
