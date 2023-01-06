@@ -1,3 +1,5 @@
+# Lecture 3
+
 - We have to configure our project to remove console.log
 -Babel plugin (transform remove console) removes console.log .
 -Take a look at babel documentation it performs a lot of task.
