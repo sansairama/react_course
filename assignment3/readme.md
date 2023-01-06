@@ -33,28 +33,29 @@ AS A LAST RESORT, YOU CAN PASS AN ITEM’S INDEX IN THE ARRAY AS A KEY. THIS CAN
 
 
 
-Reacts tracks uniqueness using keys.
+- Reacts tracks uniqueness using keys.
 
-Babel converts jsx to React.createElement. Babel performs a lot of task in backend.
+- Babel converts jsx to React.createElement. Babel performs a lot of task in backend.
 
-We have a package-lock.json inside our node_modules . They lock the versions of the transitive dependencies.
+- We have a package-lock.json inside our node_modules . They lock the versions of the transitive dependencies.
 
 
 
--:Use of dist folder .
+- Use of dist folder .
 
--- When we do a production or a development build parser pushes optimized version of our code in the dist folder.(changed variable_names,less whitesapces, removes console.log etc.)
+   When we do a production or a development build parser pushes optimized version of our code in the dist folder.(changed variable_names,less whitesapces, removes console.log etc.)
 
--Transitive dependency - inception of dependency. Package manager(npm) manages transitive dependency.
+- Transitive dependency - inception of dependency. Package manager(npm) manages transitive dependency.
 
--JSX is not a package its a javascript syntax extension.Hence can be used directly no need of any package manager like babel to install.
+- JSX is not a package its a javascript syntax extension.Hence can be used directly no need of any package manager like babel to install.
 
--Functional components are nothing but javascript functions returning react elements. JSX is a react element(behind the scenes).
--Functional components names always starts with a capital letter.Its a normal convention and a good practice.
--Functional components are rendered using angular brackets.
+-Functional components 
+ Functional componentsare nothing but javascript functions returning react elements. JSX is a react element(behind the scenes).
+ Functional components names always starts with a capital letter.Its a normal convention and a good practice.
+ Functional components are rendered using angular brackets.
 
--To use a react element inside functional component use {} and element name,as simple as that e.g. {header}. For more eg. see assignment 3 code.
--To use a functional component inside functional componenet you have to use {} and function name with () inside it(e.g. {Header()} or simple use angular brackets(eg. <Header/>).
--{} inside functional components can contain any piece of javascript code.
+- To use a react element inside functional component use {} and element name,as simple as that e.g. {header}. For more eg. see assignment 3 code.
+- To use a functional component inside functional componenet you have to use {} and function name with () inside it(e.g. {Header()} or simple use angular brackets(eg. <Header/>).
+- {} inside functional components can contain any piece of javascript code.
 
--JSX NEEDS BABEL
+- JSX NEEDS BABEL
