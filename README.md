@@ -72,7 +72,7 @@ return (
 ## Q: What is `Reconciliation` in React?
 A: `Reconciliation` is the process through which React updates the Browser DOM and makes React work faster. React use a `diffing algorithm` so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) when there's an update of components.
 React stores a copy of Browser DOM which is called `Virtual DOM`. When we make changes or add data, React creates a new Virtual DOM and compares it with the previous one. Comparison is done by `Diffing Algorithm`.
-React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called Reconciliation.
+React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called Reconciliation.[Find out more](https://reactjs.org/docs/reconciliation.html).
 
 
 ## Q: What is `React Fiber`?
@@ -82,7 +82,7 @@ Because Fiber is asynchronous, React can:
 - Pause, resume, and restart rendering work on components as new updates come in
 - Reuse previously completed work and even abort it if not needed
 - Split work into chunks and prioritize tasks based on importance
-
+[Read more about fibres](https://github.com/acdlite/react-fiber-architecture)
 
 ## Q: Why do we need `keys` in React?
 A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
@@ -93,12 +93,12 @@ Keys should be given to the elements within the array to give the elements a sta
 <li key={1}>2</li>
 <li key={2}>3</li>
 ```
-
+### Read more about it in the find out more section of react conciliation. 
 
 ## Q: Can we use `index as keys` in React?
 A: Yes, we can use the `index as keys`, but it is not considered as a good practice to use them because if the order of items may change. This can negatively impact performance and may cause issues with component state.
 Keys are taken from each object which is being rendered. There might be a possibility that if we modify the incoming data react may render them in unusual order.
-
+[An excellent arcticle on it](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
 
 ## Q: What is `props in React`? Ways to.
 A: props stands for properties. Props are arguments passed into React components. props are used in React to pass data from one component to another (from a parent component to a child component(s)). They are useful when you want the flow of data in your app to be dynamic.
@@ -112,6 +112,7 @@ function App() {
   )
 }
 ```
+[Read more](https://reactjs.org/docs/components-and-props.html)
 
 ## Q: What is `Config Driven UI`?
 A: `Config Driven UI` are based on the configurations of the data application receives. It is rather a good practice to use config driven UIs to make application for dynamic. 
