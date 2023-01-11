@@ -67,7 +67,7 @@ return (
         </>
     );
 ```
-
+[ Read More about fragements ] (https://reactjs.org/docs/fragments.html)
 
 ## Q: What is `Reconciliation` in React?
 A: `Reconciliation` is the process through which React updates the Browser DOM and makes React work faster. React use a `diffing algorithm` so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) when there's an update of components.
