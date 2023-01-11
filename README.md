@@ -112,7 +112,8 @@ function App() {
   )
 }
 ```
-[Read more](https://reactjs.org/docs/components-and-props.html)
+[Read more](https://reactjs.org/docs/components-and-props.html) 
+[Some other interesting resource](https://beta.reactjs.org/learn/sharing-state-between-components)
 
 ## Q: What is `Config Driven UI`?
 A: `Config Driven UI` are based on the configurations of the data application receives. It is rather a good practice to use config driven UIs to make application for dynamic. 
