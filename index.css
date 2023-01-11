@@ -1,0 +1,52 @@
+.main_header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.img{
+    width: 6vw;
+    height:6vw;
+    margin-left:20vw;
+}
+ .header_elements > ul{
+    list-style: none;
+    display:flex;
+    gap:3vw;
+    font-size:18px ;
+    margin-right:10vw;
+ }
+
+ .body_items{
+    width:20vw;
+    gap:3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding:10px;
+    margin-left:40px;
+    margin-right:40px;
+    margin-top:50px;
+    transition: all 0.5s ease-out;
+ }
+ .body_items img{
+    width:100%;
+ }
+.inner_items h4{
+    font-weight: lighter;
+    font-size: 14px;
+    padding:3px;
+}
+.dinner_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.body_items:hover {
+    width:22vw;
+}
+.price{
+    display: flex;
+    gap:10vw;
+}
+.price > h4 {
+    font-weight: lighter;
+}
