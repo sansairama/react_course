@@ -50,3 +50,25 @@
 .price > h4 {
     font-weight: lighter;
 }
+
+.search_box{
+    display: flex;
+    margin-left:35vw;
+    padding:20px;
+    gap:10px;
+}
+.search_box >button {
+    padding: 0.3vw;
+    background-color: rgb(83, 80, 148);
+    border:none;
+    color:white;
+}
+.search_box >input {
+    width:20vw;
+    height: 2.5vw;
+    border-radius:5px;
+    border:2px solid black;
+}
+.search_box >button:hover{
+ padding: 0.5vw;  
+}
