@@ -55,7 +55,7 @@ AS A LAST RESORT, YOU CAN PASS AN ITEM’S INDEX IN THE ARRAY AS A KEY. THIS CAN
  Functional components are rendered using angular brackets.</br>
 
 - To use a react element inside functional component use {} and element name,as simple as that e.g. {header}. For more eg. see assignment 3 code.
-- To use a functional component inside functional componenet you have to use {} and function name with () inside it(e.g. {Header()} or simple use angular brackets(eg. <Header/>).
+- To use a functional component inside functional componenet you have to use {} and function name with () inside it(e.g.``` {Header()} or simple use angular brackets(eg. <Header/>```).
 - {} inside functional components can contain any piece of javascript code.
 
 - JSX NEEDS BABEL
