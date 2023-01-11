@@ -112,7 +112,7 @@ function App() {
   )
 }
 ```
-[Read more](https://reactjs.org/docs/components-and-props.html) 
+[Read more](https://reactjs.org/docs/components-and-props.html) <br/>
 [Some other interesting resource](https://beta.reactjs.org/learn/sharing-state-between-components)
 
 ## Q: What is `Config Driven UI`?
