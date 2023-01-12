@@ -1,12 +1,19 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
 .main_header{
     display:flex;
+    background:linear-gradient(to right,#EC9F05 , #FF4E00);
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height:5vw;
 }
 .img{
     width: 6vw;
-    height:6vw;
+    height:4.5vw;
     margin-left:20vw;
 }
  .header_elements > ul{
