@@ -34,14 +34,14 @@ body{
     margin-top:50px;
     transition: all 0.5s ease-out;
  }
+ .inner_items > h4 {
+    font-weight: lighter;
+    font-size: 15px;
+    overflow-wrap:break-word;
+ }
  .body_items img{
     width:100%;
  }
-.inner_items h4{
-    font-weight: lighter;
-    font-size: 14px;
-    padding:3px;
-}
 .dinner_list{
     display: flex;
     flex-wrap: wrap;
@@ -78,4 +78,15 @@ body{
 }
 .search_box >button:hover{
  padding: 0.5vw;  
+}
+
+.shimmer{
+    width:20vw;
+    gap:3px;
+    height: 20vw;
+    background-color: #D6D8DA;
+    padding:10px;
+    margin-left:40px;
+    margin-right:40px;
+    margin-top:100px;
 }

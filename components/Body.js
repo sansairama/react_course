@@ -1,6 +1,6 @@
-import datas from './Data'
 import '../index.css'
-import {useState} from 'react'
+import Shimmer from './Shimmer'
+import {useState,useEffect} from 'react'
 const Restaurant = ({name,cloudinaryImageId,cuisines,costForTwoString,avgRating}) => {
     return (
         
@@ -11,7 +11,7 @@ const Restaurant = ({name,cloudinaryImageId,cuisines,costForTwoString,avgRating}
             <h4 className='cuisines'>{cuisines.join(",")}</h4>
             </div>
             <div className='price'>
-            <h4 style={{backgroundColor:"orange",padding:"5px"}}>{avgRating}</h4>
+            <h4 style={ avgRating > 4 ? {backgroundColor:"#50C878",padding:"3px"}:{backgroundColor:"orange",padding:"3px"}}>{avgRating}</h4>
             <h4>{costForTwoString}</h4>
             </div>
         </div>
@@ -19,30 +19,54 @@ const Restaurant = ({name,cloudinaryImageId,cuisines,costForTwoString,avgRating}
 }
 const Body = () => {
     const [value,setValue] = useState("")
-    const [info,setInfo] = useState(datas)
-    const transform = (v) => {
-        if(v) {
-         newinfo = info.filter((infos) => infos.data.name.includes(v))
+    const [filters,setFilter] = useState([])
+    const [alldata,setAlldata] = useState([])
+
+
+
+
+    const transform = (v,a) => {
+        {
+         newinfo = a.filter((infos) => infos?.data?.name?.toLowerCase().includes(v.toLowerCase()))
          return newinfo
         }
-        else
-        return datas
     }
-   return (
+    useEffect(() => {
+        getRestaurants();
+        console.log("hello")
+      }, []);
+    
+      async function getRestaurants() {
+        const data = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json = await data.json();
+        setAlldata(json?.data?.cards[2]?.data?.data?.cards)
+        setFilter(json?.data?.cards[2]?.data?.data?.cards)
+      }
+      console.log("world")
+
+   if(!alldata) return null;
+
+
+   return alldata?.length === 0 ?
+   ( <Shimmer/> )
+    :(
     <>
      <div className="search_box">
             <input type="" 
             value={value}
             onChange = {() => setValue(event.target.value)}
+            placeholder = "Search for food.."
             />
     <button onClick={()=>{
-    const data = transform(value)
-     setInfo(data)
+    const data = transform(value,alldata)
+     setFilter(data)
     }}>Click me</button>
     </div>
-    <div class="dinner_list">
+    <div className="dinner_list">
     {
-        info.map((infos) => <Restaurant {... infos.data}/>)
+        filters.map((infos) => <Restaurant key={infos.data.id} {... infos.data}/>)
     }
     </div>
     </>
