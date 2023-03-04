@@ -3,6 +3,15 @@ import './index.css'
 import Body from './components/Body'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import Contact from './components/Contacts'
+import About from './components/About'
+import Team from './components/Team'
+import Menu from './components/RestaurantMenu'
+import { lazy, Suspense, useState } from 'react'
+import Shimmer from './components/Shimmer'
+import UseContext from './utils/UseContext'
+import CreateContext from './utils/CreateContext'
 // <--------------- nested structure using React.createElement() ------------------------->
 // const title = React.createElement(
 //   "div",
@@ -65,17 +74,72 @@ import Footer from './components/Footer'
 
 
 
+const Instamart = lazy(() => import('./components/Instamart') );
 
-
-
-const Apps = () => (
-    <>
+const Apps = () => 
+{
+  const [user,useUser] = useState({
+    name:'Karun',
+    email:'karun@gmail.com'
+  })
+  return(
+     <>
+     <CreateContext.Provider value ={{
+      user:user
+    }}>
+    <UseContext.Provider value ={{
+      user:user,
+      useUser:useUser
+    }}>
   <Header/>
-  <Body/>
+  {/* This is needed if we are doing nested routing. Whatever children we have in
+            config, all will go into outlet acc to route */}
+  <Outlet/>
   <Footer/>
+  </UseContext.Provider>
+  </CreateContext.Provider>
   </>
 )
-
+          }
+//create browser is a list of objects
+const approuter = createBrowserRouter (
+  [
+    {
+      path:"/",
+      element:<Apps/>,
+      children:[
+        {
+          path:"/",
+          element:<Body/>
+        },
+        {
+          path:"/contacts",
+          element:<Contact/>
+        },
+        {
+          path:"/about",
+          element:<About/>,
+          children:[
+            {
+              path:"team",
+              element:<Team/>
+            }
+          ]
+        },
+        {
+          path: "/restaurant/:resId",
+          element: <Menu/>,
+        },
+        {
+          path: "/instamart",
+          element:(  <Suspense fallback={<Shimmer />}>
+          <Instamart />
+        </Suspense> )
+        }
+      ]
+    }
+  ]
+)
 
 const root = ReactDOM.createRoot(document.getElementById("root"))//React starts from whichever element has id root
-root.render(<Apps/>)
+root.render(<RouterProvider router={approuter}/>)
